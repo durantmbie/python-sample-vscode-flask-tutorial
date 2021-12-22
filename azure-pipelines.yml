@@ -6,11 +6,11 @@
 trigger:
 - master
 
-# pool:
-#   vmImage: ubuntu-latest
-
 pool:
-   vmImage: "windows-latest"
+   vmImage: ubuntu-latest
+
+#pool:
+#   vmImage: "windows-latest"
 strategy:
   matrix:
     Python27:
@@ -42,7 +42,7 @@ steps:
 
 - task: Maven@3
   inputs:
-    mavenPomFile: '/pom.xml'
+    mavenPomFile: 'pom.xml'
     mavenOptions: '-Xmx3072m'
     javaHomeOption: 'JDKVersion'
     jdkVersionOption: '1.8'
